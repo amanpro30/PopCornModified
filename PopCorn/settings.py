@@ -152,7 +152,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'popcornproject123@gmail.com'
 EMAIL_HOST_PASSWORD = 'project@123'
-EMAIL_PORT = '587'
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
