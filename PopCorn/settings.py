@@ -154,5 +154,5 @@ EMAIL_HOST_USER = 'popcornproject123@gmail.com'
 EMAIL_HOST_PASSWORD = 'project@123'
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
+MEDIA_URL = '/Media/'
