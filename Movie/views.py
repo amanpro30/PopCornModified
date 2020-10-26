@@ -11,6 +11,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from .serializers import *
 from rest_framework import generics, filters, fields
+from django.utils import timezone
 
 
 def hompage(request):
@@ -59,7 +60,7 @@ def hompage(request):
         cur.execute(most_reviewed_query)
         context['tv_most_reviewed'] = cur.fetchall()
     visits_grouped = Visits.objects.filter(
-        time__range=[datetime.datetime.now() - datetime.timedelta(days=7), datetime.datetime.now()]).values(
+        time__range=[timezone.now() - datetime.timedelta(days=7), timezone.now()]).values(
         'Show').annotate(dcount=Count('Show')).order_by('-dcount')
     show_trending = visits_grouped[0]['Show']
     trending_show = Show.objects.filter(id=show_trending)
